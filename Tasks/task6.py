@@ -13,17 +13,17 @@ TODO:
 """
 
 
-def print_input_And_Output(func):
+def details(function):
     def wrapper(*args, **kwargs):
         print("Inputs Of Function:", *args, **kwargs)
-        func(*args, **kwargs)
-        print("Output Of Function:", func(*args, **kwargs))
-        return func(*args, **kwargs)
+        function(*args, **kwargs)
+        print("Output Of Function:", function(*args, **kwargs))
+        return function(*args, **kwargs)
 
     return wrapper
 
 
-@print_input_And_Output
+@details
 def add(*args):
     return sum(args)
 
